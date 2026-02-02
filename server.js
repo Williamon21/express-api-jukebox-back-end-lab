@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // Logs on connection
 mongoose.connection.on('connected', ()=> {
-    console.log(`Connected to mongodb on ${mongoose.connection.name}`)
+    console.log(`Connected to mongodb on ${mongoose.connection.title}`)
 })
 // Logs on errors
 mongoose.connection.on('error', (error)=> {
