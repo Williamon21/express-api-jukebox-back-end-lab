@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const express = require('express')
 const morgan = require('morgan')
 const cors = require("cors")
-const trackController = require("./controllers/track")
+const trackController = require("./controllers/tracks.controller")
 
 const app = express()
 
@@ -26,3 +26,7 @@ app.use(express.json())
 
 // Morgan Logger
 app.use(morgan('tiny'))
+
+app.use("/tracks", trackController)
+
+app.listen(3000, ()=>console.log("Who let the dogs out on port 3000"))
