@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const trackSchema = new mongoose.Schema({
   title: {
@@ -10,15 +10,18 @@ const trackSchema = new mongoose.Schema({
     required: true,
   },
   length: {
-    type: Number,
+    type: String,
     required: true,
     min: 0,
   },
   releaseYear: {
-    type: Number
+    type: Number,
+  },
+  coverUrl: {
+    type: String,
   },
 });
 
-const Track = mongoose.model("Track", trackSchema);
+const Track = mongoose.model('Track', trackSchema);
 
 module.exports = Track;

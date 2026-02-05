@@ -16,16 +16,16 @@ const router = express.Router();
 // POST /tracks
 router.post("/", async (req, res) => {
   try {
-    // throw new Error("Danger Bill Robinson!")
     const newTrack = await Track.create(req.body);
     res.status(201).json({
       message: `Track ${newTrack.title} created successfully`,
-      title: newTrack,
+      track: newTrack, 
     });
   } catch (error) {
     res.status(500).json({ err: error.message });
   }
 });
+
 
 // GET /tracks
 router.get("/", async (req, res) => {
